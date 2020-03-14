@@ -6,7 +6,7 @@ namespace ProbablityOfWhiteBall
     {
         static void Main(string[] args)   //In this project, 0 is accepted for black balls and 1 for white balls.
         {
-            float allConditions = 1000; //Number of experiments carried out
+            float allConditions = 100000; //Number of experiments carried out
             float whiteConditionsCounter = 0;  //Counter that counts when both cases A and B (A: first ball is white and B: last ball is white) are white. 
             
             for (int t = 0; t < allConditions; t++)   //The experiment is repeated as much as the value of variable allConditions (For now, 100k times).
@@ -45,7 +45,7 @@ namespace ProbablityOfWhiteBall
                 {
                     whiteConditionsCounter++;     //The first and last ball white cases are counted here.
                 }
-                Console.WriteLine("step: {0}", t + 1);
+                Console.WriteLine("Current Experiment: {0}", t + 1);
             }
             float probablity = whiteConditionsCounter / allConditions;      //Probability is calculated by proportioning the cases where the first and last ball is white to the whole case..
             Console.WriteLine("*******************************Last probablity = {0} *********************************", probablity);
